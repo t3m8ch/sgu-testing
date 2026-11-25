@@ -1,0 +1,31 @@
+{
+  "name": "nvs-playwright-tests",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:public": "playwright test --grep @public",
+    "test:auth": "playwright test tests/auth.spec.ts",
+    "test:checkout": "playwright test tests/checkout.spec.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint",
+    "format": "oxfmt --write '**/*.ts'",
+    "format:check": "oxfmt --check '**/*.ts'",
+    "report:generate": "allure generate allure-results -o allure-report",
+    "report:open": "allure open --host 127.0.0.1 allure-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.1",
+    "@types/node": "^24.0.0",
+    "allure": "3.33.0",
+    "allure-playwright": "3.15.0",
+    "oxfmt": "^0.80.0",
+    "oxlint": "^1.95.0",
+    "typescript": "^6.0.0"
+  }
+}
